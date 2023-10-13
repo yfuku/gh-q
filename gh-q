@@ -24,12 +24,12 @@ query ($owner: String!, $endCursor: String) {
         endCursor
       }
       nodes {
-        nameWithOwner
+        sshUrl
       }
     }
   }
 }
-' -q '.data.repositoryOwner.repositories.nodes[].nameWithOwner' | fzf)
+' -q '.data.repositoryOwner.repositories.nodes[].sshUrl' | fzf)
 
 if [ $? -ne 0 ];then
   exit 1
